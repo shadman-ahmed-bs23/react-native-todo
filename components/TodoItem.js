@@ -1,18 +1,17 @@
- import React from 'react'; 
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native'; 
+import React from 'react';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
-
 const TodoItem = ({ item, deleteTodo }) => {
   return (
     <TouchableOpacity style={styles.todoItem}>
-      <View style={styles.todoItemView}>
-        <Text style={styles.itemText}>{item.text}</Text> 
+      <View style={styles.todoItemView}> 
+        <Text style={styles.itemText}>{item.text}</Text>
         <Icon
-          name="remove" 
-          size={20} 
-          color="firebrick"
+          name="trash"
+          size={20}
+          color="red"
           onPress={() => deleteTodo(item.id)} 
-        />
+        /> 
       </View>
     </TouchableOpacity>
   );
@@ -33,6 +32,6 @@ const styles = StyleSheet.create({
   itemText: {
     fontSize: 18,
   }
-});
+})
 
 export default TodoItem; 
